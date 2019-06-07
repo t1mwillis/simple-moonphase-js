@@ -1,2 +1,5 @@
-{"name" : "@t1mwillis/simple-moonphase-js", "version" : "1.0.0"
+{
+    "name" : "@t1mwillis/simple-moonphase-js",
+    "version" : "1.0.0",
+    "description" : "a simple package for calculating the moonphase and icon associated with that phase"
 }
