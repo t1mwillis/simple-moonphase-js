@@ -27,12 +27,12 @@ module.exports = function moonCalc(date) {
 	  }
     };
     
-	var dd = date.getDate();
-	var mm = date.getMonth()+1; //January is 0!
-	var yyyy = date.getFullYear();
+	let dd = date.getDate();
+	let mm = date.getMonth()+1; //January is 0!
+	let yyyy = date.getFullYear();
 	
-	var phase = Moon.phase(yyyy, mm, dd);
-	var phaseStr = phase.name.replace(/[_-]/g, " ");
+	let phase = Moon.phase(yyyy, mm, dd);
+	let phaseStr = phase.name.replace(/[_-]/g, " ");
     
     
     return phase
