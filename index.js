@@ -1,5 +1,9 @@
-function moonCalc() {
-	var Moon = {
+module.exports = function moonCalc(date) {
+    if (!date instanceof Date) {
+        throw new TypeError("MoonCalc needs a date object");
+    }
+
+	const Moon = {
 	  phases: ['new-moon', 'waxing-crescent', 'waxing-quarter', 'waxing-gibbous', 'full-moon', 'waning-gibbous', 'waning-quarter', 'waning-crescent'],
 	  phase: function (year, month, day) {
 	    let c = e = jd = b = 0;
@@ -21,17 +25,17 @@ function moonCalc() {
 	    if (b >= 8) b = 0; // 0 and 8 are the same so turn 8 into 0
 	    return {phase: b, name: Moon.phases[b]};
 	  }
-	};
-
-	var today = new Date();
-	var dd = today.getDate();
-	var mm = today.getMonth()+1; //January is 0!
-	var yyyy = today.getFullYear();
+    };
+    
+	var dd = date.getDate();
+	var mm = date.getMonth()+1; //January is 0!
+	var yyyy = date.getFullYear();
 	
 	var phase = Moon.phase(yyyy, mm, dd);
 	var phaseStr = phase.name.replace(/[_-]/g, " ");
     
     
+    return phase
     /*
 	var img = '/lib/img/weather/moon/' + phase.name + '.png';
 	
